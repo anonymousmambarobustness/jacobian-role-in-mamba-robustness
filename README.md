@@ -2,7 +2,7 @@
 This repository contains code for **"On the Role of the Jacobian in Mamba’s Adversarial
 Robustness"** (NeurIPS 2025 Anonymous Submission).
 
-We support models such as S4, DSS, S5, and Mamba, and evaluate their robustness against adversarial attacks following training or MEMO test-time adaptation (TTA), with and without Jacobian Regularization (JR).
+We support models such as S4, DSS, S5, and Mamba, and evaluate their robustness against adversarial attacks following training or test-time adaptation (TTA), with and without Jacobian Regularization (JR).
 
 ---
 
@@ -21,14 +21,14 @@ pip install -r requirements.txt
 ```
 SSM_robustness/
 │
-├── checkpoints/              # Saved model checkpoints
+├── checkpoints/              # Trained SSMs checkpoints
 ├── datasets/                 # Tiny-ImageNet and CIFAR-10
-├── memo_AA_logs/             # Logs for AutoAttack runs during MEMO
+├── memo_AA_logs/             # Logs for AutoAttack (AA) runs during MEMO
 ├── memo_final_results/       # Destination of text files containing models performance results after MEMO TTA with/without JR
 ├── models/                   # Definitions of SSM architectures (S4, DSS, S5, Mamba)
 ├── utils/                    # Common utilities
 │
-├── attack_ssm.py             # PGD-10 and AutoAttack evaluation
+├── attack_ssm.py             # PGD-10 and AA evaluation
 ├── download_tinyimagenet.py  # script for downloading Tiny-ImageNet dataset
 ├── memo_test_adapt.py        # script for applying TTA with/without JR
 │
@@ -96,4 +96,4 @@ python memo_test_adapt.py --dataroot datasets/CIFAR10 --dataset CIFAR10 --num_sa
 
 ## 💡 Future
 
-We plan to extend this repository with a separate `VMamba_robustness/` directory containing results and code for the VMamba models studied in the paper.
+We plan to extend this repository with a separate `VMamba_robustness/` directory containing code for the VMamba model experiments.
