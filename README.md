@@ -1,3 +1,6 @@
+This repository contains code for **"On the Role of the Jacobian in Mamba’s Adversarial
+Robustness"** (NeurIPS 2025 Anonymous Submission).
+
 ## 🔧 Installation
 
 ```bash
@@ -9,10 +12,7 @@ pip install -r requirements.txt
 ---
 
 # SSM_robustness
-This repository contains code for **"On the Role of the Jacobian in Mamba’s Adversarial
-Robustness"** (NeurIPS 2025 Anonymous Submission).
-
-We support models such as **S4**, **DSS**, **S5**, and **Mamba**, and evaluate their robustness robustness on **CIFAR-10** and **Tiny-ImageNet** against **PGD-10** and **AutoAttack (AA)**, following training or test-time adaptation (TTA), with and without Jacobian Regularization (JR).
+In this directory we support models such as **S4**, **DSS**, **S5**, and **Mamba**, and evaluate their robustness robustness on **CIFAR-10** and **Tiny-ImageNet** against **PGD-10** and **AutoAttack (AA)**, following training or test-time adaptation (TTA), with and without Jacobian Regularization (JR).
 
 ---
 
@@ -91,10 +91,7 @@ python memo_test_adapt.py --dataroot datasets/CIFAR10 --dataset CIFAR10 --num_sa
 
 # VMamba_robustness
 
-This directory contains code and pretrained checkpoints for evaluating the **VMamba-T** model as part of our NeurIPS 2025 submission:  
-**"On the Role of the Jacobian in Mamba’s Adversarial Robustness"** (Anonymous Submission).
-
-We evaluate VMamba-T on **ImageNet** using **PGD-10** and **AA**, and on **ImageNet-A**, **ImageNet-R**, and **ImageNet-S** using standard accuracy evaluation. All evaluations apply TTA via the MEMO method, with and without JR.
+In this directory, we evaluate VMamba-T on **ImageNet** using **PGD-10** and **AA**, and on **ImageNet-A**, **ImageNet-R**, and **ImageNet-S** using standard accuracy evaluation. All evaluations apply TTA via the MEMO method, with and without JR.
 
 ---
 
