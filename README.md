@@ -1,11 +1,3 @@
-# SSM_robustness
-This repository contains code for **"On the Role of the Jacobian in Mamba’s Adversarial
-Robustness"** (NeurIPS 2025 Anonymous Submission).
-
-We support models such as S4, DSS, S5, and Mamba, and evaluate their robustness against adversarial attacks following training or test-time adaptation (TTA), with and without Jacobian Regularization (JR).
-
----
-
 ## 🔧 Installation
 
 ```bash
@@ -13,6 +5,14 @@ git clone https://github.com/anonymousmambarobustness/jacobian-role-in-mamba-rob
 cd jacobian-role-in-mamba-robustness/SSM_robustness
 pip install -r requirements.txt
 ```
+
+---
+
+# SSM_robustness
+This repository contains code for **"On the Role of the Jacobian in Mamba’s Adversarial
+Robustness"** (NeurIPS 2025 Anonymous Submission).
+
+We support models such as **S4**, **DSS**, **S5**, and **Mamba**, and evaluate their robustness robustness on **CIFAR-10** and **Tiny-ImageNet** against **PGD-10** and **AutoAttack (AA)**, following training or test-time adaptation (TTA), with and without Jacobian Regularization (JR).
 
 ---
 
@@ -94,7 +94,7 @@ python memo_test_adapt.py --dataroot datasets/CIFAR10 --dataset CIFAR10 --num_sa
 This directory contains code and pretrained checkpoints for evaluating the **VMamba-T** model as part of our NeurIPS 2025 submission:  
 **"On the Role of the Jacobian in Mamba’s Adversarial Robustness"** (Anonymous Submission).
 
-We evaluate VMamba on ImageNet using PGD-10 and AA, and on ImageNet-A, ImageNet-R, and ImageNet-S using standard accuracy evaluation. All evaluations apply TTA via the MEMO method, with and without JR.
+We evaluate VMamba-T on **ImageNet** using **PGD-10** and **AA**, and on **ImageNet-A**, **ImageNet-R**, and **ImageNet-S** using standard accuracy evaluation. All evaluations apply TTA via the MEMO method, with and without JR.
 
 ---
 
@@ -177,6 +177,3 @@ python3 vmamba_robustness_inference.py --dataset imagenet-a \
 
 ---
 
-## 💡 Future
-
-We plan to extend this repository with a separate `VMamba_robustness/` directory containing code for the VMamba model experiments.
