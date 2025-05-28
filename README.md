@@ -102,7 +102,7 @@ We evaluate VMamba on ImageNet using PGD-10 and AA, and on ImageNet-A, ImageNet-
 
 Download the VMamba-T pretrained checkpoint for ImageNet (vssm_tiny_0230_ckpt_epoch_262.pth) and place it under VMamba_robustness/pretrained_weights/ :
 
-📎 [Google Drive – VMamba Weights](https://drive.google.com/drive/folders/1ceS0C1MGdOZcBNBLw4gESswarz4L54vD)
+📎 [Google Drive – VMamba-T Weights](https://drive.google.com/drive/folders/1ceS0C1MGdOZcBNBLw4gESswarz4L54vD)
 
 ---
 
