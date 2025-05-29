@@ -1,3 +1,18 @@
+# On the Role of the Jacobian in Mamba’s Adversarial Robustness
+
+This repository supports the NeurIPS 2025 anonymous submission:  
+**"On the Role of the Jacobian in Mamba’s Adversarial Robustness"**
+
+We study the impact of **Jacobian Regularization (JR)** on adversarial robustness in **State Space Models (SSMs)**, including both SSMs (S4, DSS, S5, Mamba) and the **VMamba-T** architecture.  
+Our experiments span **CIFAR-10**, **Tiny-ImageNet**, and **ImageNet**, where we evaluate robustness to **PGD-10** and **AutoAttack (AA)**, as well as **ImageNet-A**, **ImageNet-R**, and **ImageNet-S**, where we report standard accuracy under distribution shifts. All evaluations include test-time adaptation (TTA) via the **MEMO** method, with and without JR.
+
+This repository contains two main directories:
+- `SSM_robustness/` — training, evaluation, and TTA for SSMs on CIFAR-10 and Tiny-ImageNet.
+- `VMamba_robustness/` — test-time adaptation of pretrained VMamba on ImageNet and real-world variants.
+
+---
+
+
 This repository contains code for **"On the Role of the Jacobian in Mamba’s Adversarial
 Robustness"** (NeurIPS 2025 Anonymous Submission).
 
