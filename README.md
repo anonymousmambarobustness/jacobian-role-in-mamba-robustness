@@ -83,14 +83,14 @@ This occurs in the Mamba implementation (`mamba_ssm/ops/selective_scan_interface
 ### ✅ Fix
 
 In the `backward` method of `SelectiveScanFn`, replace:
-```python
+python
 dconv1d_out = torch.addmm(dconv1d_out, x_proj_weight.t(), dx_dbl.t(), out=dconv1d_out)
----
-with:
-```python
-dconv1d_out = torch.addmm(dconv1d_out, x_proj_weight.t(), dx_dbl.t())
----
 
+with:
+
+dconv1d_out = torch.addmm(dconv1d_out, x_proj_weight.t(), dx_dbl.t())
+
+```
 ## 🧪 Evaluation
 
 Run PGD-10 and AutoAttack on trained models:
