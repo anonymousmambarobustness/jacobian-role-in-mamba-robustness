@@ -100,11 +100,8 @@ def eval_test(args, model, device, test_loader):
         data, target = data.to(device), target.to(device)
         with torch.no_grad():
             output = model(data)
-            print(f"DEBUG: eval_test: output={output}")
-            test_loss += F.cross_entropy(output, target, size_average=False).item()
-                
+            test_loss += F.cross_entropy(output, target, size_average=False).item()  
             pred = output.max(1, keepdim=True)[1]
-            print(f"DEBUG: eval_test: pred={pred}")
             correct += pred.eq(target.view_as(pred)).sum().item()
         torch.cuda.empty_cache()
            
