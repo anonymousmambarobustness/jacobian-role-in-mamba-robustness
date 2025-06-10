@@ -6,7 +6,7 @@ from torch.utils.data import Subset
 import random
 from collections import defaultdict
 from torchvision import transforms
-from models.SSM import SSM, Mega, S5_SSM, S6_SSM
+from models.SSM import SSM, S5_SSM, S6_SSM
 
 class TrainTinyImageNet(Dataset):
     def __init__(self, root, id, transform=None) -> None:
@@ -63,7 +63,7 @@ def filter_dataset_by_random_classes(dataset, k):
     Return:
     - class_indices_map: A dictionary containing the sample indices for each class.
     """
-    # 收集所有类别及其对应的样本索引
+    
     all_classes = sorted(set([label for _, label in dataset]))
     random_classes = random.sample(all_classes, k)
     class_indices_map = defaultdict(list)
@@ -149,7 +149,7 @@ def filter_dataset_by_class(dataset, num_samples_per_class):
             class_indices[label] = []
         class_indices[label].append(idx)
     
-    # 从每个类别中随机选择指定数量的样本索引
+    
     filtered_indices = []
     for label, indices in class_indices.items():
         sampled_indices = random.sample(indices, num_samples_per_class)
@@ -172,9 +172,7 @@ def build_model(args, model_name):
         else:
             model = SSM(d_input=3, d_model=128, n_layers=args.num_layers, mode = 'diag', d_output=args.num_classes )
     elif 'S5' in model_name:
-        model = S5_SSM(d_input=3, d_model=128, n_layers=args.num_layers, d_output=args.num_classes )
-    elif model_name == 'Mega':
-        model = Mega(d_input=3, d_model=128, n_layers=args.num_layers, d_output=args.num_classes, seq_len=64 * 64 ) 
+        model = S5_SSM(d_input=3, d_model=128, n_layers=args.num_layers, d_output=args.num_classes ) 
     elif 'S6' in model_name:
         model = S6_SSM(d_input=3, d_model=128, n_layers=args.num_layers, d_output=args.num_classes )     
     return model
