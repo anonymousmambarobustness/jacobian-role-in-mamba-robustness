@@ -75,9 +75,9 @@ To control the **strength of JR**, use the `--alpha` flag, which corresponds to 
 python train_trades_cifar10.py --model_name S6 --num_layers 4 --num-classes 10 --model-dir checkpoints/S6/CIFAR10/180_epochs/gp_correct_class/Nat/lr_0.001_alpha_0.001 --AT_type Nat --reg_type gp_correct_class --alpha 1e-3 --lr 1e-3 --batch-size 256 --epsilon 0.031 --step-size 0.007 --beta 6
 python train_trades_cifar10.py --model_name S6 --num_layers 4 --num-classes 10 --model-dir checkpoints/S6/CIFAR10/180_epochs/none/Nat/lr_0.001_alpha_0 --AT_type Nat --reg_type none --alpha 0 --lr 1e-3 --batch-size 256 --epsilon 0.031 --step-size 0.007 --beta 6
 ```
-## ⚠️ Note for Using JR (Jacobian Regularization)
+## ⚠️ Note for Using JR
 
-When using **Jacobian Regularization (JR)**, you may encounter the following error during backpropagation:
+When using **JR**, you may encounter the following error during backpropagation:
 RuntimeError: addmm(): functions with out=... arguments don't support automatic differentiation, but one of the arguments requires grad.
 This occurs in the Mamba implementation (`mamba_ssm/ops/selective_scan_interface.py`) due to the use of the `out=...` argument in a differentiable context.
 ### ✅ Fix
