@@ -95,8 +95,6 @@ with:
 dconv1d_out = torch.addmm(dconv1d_out, x_proj_weight.t(), dx_dbl.t())
 ```
 
-```
-```
 ## 🧪 Evaluation
 
 Run PGD-10 and AutoAttack on trained models:
