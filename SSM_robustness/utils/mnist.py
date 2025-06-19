@@ -1,8 +1,6 @@
 import os
-if os.getenv('CONDA_DEFAULT_ENV') == "exploring_mamba_env7":
-    from models.SSM import SSM, Mega, S5_SSM, S6_SSM
-from vmamba_models.SS2D_SSM import SS2D_SSM
 import re
+from models.SSM import SSM, Mega, S5_SSM, S6_SSM
 def build_model(args, model_name):
     number_of_layers = re.findall(r'(\d+)_layers', model_name)
     patch_size = int(model_name.split('_')[-1]) if "patch_size" in model_name else None
