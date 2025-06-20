@@ -8,7 +8,7 @@ Our experiments span **CIFAR-10**, **Tiny-ImageNet**, and **ImageNet**, where we
 
 This repository contains two main directories:
 - `SSM_robustness/` — training, evaluation, and TTA for SSMs on CIFAR-10 and Tiny-ImageNet.
-- `VMamba_robustness/` — test-time adaptation of pretrained VMamba on ImageNet and real-world variants.
+- `VMamba_robustness/` — TTA of pretrained VMamba on ImageNet and real-world variants.
 
 ---
 
